@@ -1,0 +1,69 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Example 1: input to output</h1>
+    <input type = "text" id = "i1">
+    <button onclick = "handleClick(event)">My Button</button>
+    <div id = "i2">The name entered was: </div>
+    <script type = "text/javascript">
+        function handleClick(e){
+            let ele = document.getElementById("i1");
+            let ele2 = document.getElementById('i2');
+            ele2.innerHTML = ele2.innerHTML + ele.value;
+        }        
+    </script>
+    <h1>Example 2: color changing buttons</h1>
+    <div id = "me">my name is Sophia</div>
+    <div>
+        <button onclick="addColor('red')">Red</button>
+        <button onclick="addColor('blue')">Blue</button>
+        <button onclick="addColor('green')">Green</button>
+        <button onclick="addColor('purple')">Purple</button>
+        <button onclick="addColor('orange')">orange</button>
+        <button onclick="addColor('yellow')">Yellow</button>
+    </div>
+    <script type = "text/javascript">
+        function addColor(c){
+            let ele = document.getElementById('me');
+            ele.style.color = c;
+        }
+    </script>
+    <h1>Example 3: color with RGB</h1>
+    <div style = 'color: rgb(300, 200, 100)'>my name is Still Sophia</div>
+    <h1>Example 4: range bar</h1>
+    Range <input type = "range" min = "0" max = "255" oninput="handleInput(event)">
+    <span id = "s1"></span>
+    <script type = "text/javascript">
+        function handleInput(e){
+            let rangeBarValue = e.target.value;
+            document.getElementById('s1').innerHTML = rangeBarValue;
+        }
+    </script>
+    <h1>Example 5: image replace</h1>
+    <style>
+        .smallImages {
+            width: 100; height: 100;
+            border: 2px solid black;
+            padding: 2px
+        }
+    </style>
+    <img src = "taters1.jpg" width = "400" heigh = "400" id = "main"/>
+    <div onclick="changeImages(event)" style = 'border: 2px solid black'>
+        <img src = "Lab3a_Q11_graph.jpg" class = "smallImages"/>
+    </div>
+    <script type = 'text/javascript'>
+        function changeImages(e) {
+            let mainImage = document.getElementById('main');
+            let target = e.target;
+            if(target.tagName == 'IMG') {
+                mainImage.src = target.src
+            }
+        }
+    </script>
+</body>
+</html>
