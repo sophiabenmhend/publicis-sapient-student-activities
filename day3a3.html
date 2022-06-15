@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <canvas id = 'c1' style = "border: 2px solid black" width = "400" height = "400">   </canvas>
+    <script type = 'text/javascript'>
+        let ctx = document.getElementById('c1').getContext('2d');
+        for(i = 0; i <= 8; i++){
+            if(i%2 == 0){
+                for(j = 1; j <= 8; j+=2){
+                xval = 50 * j;
+                yval = 50 * i;
+                console.log(xval);
+                console.log(yval);
+                ctx.fillRect(xval, yval, 50, 50);
+            }
+        }
+            else{
+                for(j = 0; j <= 8; j+=2){
+                xval = 50 * j;
+                yval = 50 * i;
+                console.log(xval);
+                console.log(yval);
+                ctx.fillRect(xval, yval, 50, 50);
+            } 
+            }
+            
+        }
+    </script>
+ 
+</body>
+</html>
