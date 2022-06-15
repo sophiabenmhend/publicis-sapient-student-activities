@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Activity 2 Form</h1>
+    <form name = "login" action = "day3.html" method = "post" onsubmit = "return handleSubmit()">
+    First Name <input type = "text" id = "first"> <br>
+    Last Name <input type = "text" id = "last"> <br>   
+    Gender <input type = "radio" id = "male"> Male<input type = "radio" id = "female"> Female <input type = "radio" id = "NB"> NB <br>
+    Password <input type = "password" id = "p1"> <br>
+    Confirm Password <input type = "password" id = "p2"> <br>
+    Skills <input type ="checkbox" id = "java">java <input type ="checkbox" id = "pyth">python <input type ="checkbox" id = "C++">C++ <br>
+    <input type = "submit" value = "submit"/> 
+    </form>    
+    <script type = "text/javascript">
+        function handleSubmit() {
+            if(first.value.length < 3){
+                alert('first name must be at least 3 letters');
+                return false;
+            }
+            else if(last.value.length < 2){
+                alert('last name must be at least two letters');
+                return false;
+            }
+            else if(!(document.getElementById('male').checked || document.getElementById('female').checked || document.getElementById('NB').checked)){
+                alert('must check a gender');
+                return false;
+            }
+            else if(p1.value != p2.value){
+                alert('passwords do not match');
+                return false;
+            }
+            else if(!(document.getElementById('java').checked || document.getElementById('pyth').checked || document.getElementById('C++').checked)){
+                alert('must check at least one skill');
+                return false;
+            }
+            else if((document.getElementById('male').checked && document.getElementById('female').checked) || (document.getElementById('female').checked && document.getElementById('NB').checked) || (document.getElementById('male').checked && document.getElementById('NB').checked)){
+                alert('cannot choose more than one gener');
+                return false;
+            }
+            else{
+                return true;
+            }
+
+        }
+    </script>
+</body>
+</html>
